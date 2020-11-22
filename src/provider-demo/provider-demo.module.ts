@@ -4,6 +4,7 @@ import { UniverseService } from "./universe.service";
 import { ClassService } from "./class.service";
 import { factoryService, OptProvider } from "./factory.service";
 import { UseExistingService } from "./useExisting.service";
+import { UnService } from "./unservice.service";
 
 /* 值提供者 */
 const MockService = {
@@ -27,10 +28,18 @@ const MockService = {
 		{ provide: 'FactoryService', useFactory: factoryService, inject: [OptProvider] },
 		// 别名提供者
 		UseExistingService,
-		{ provide: 'UseExisting', useExisting: UseExistingService }
+		{ provide: 'UseExisting', useExisting: UseExistingService },
+		// 非服务提供者
+		{ provide: 'UnService', useFactory: UnService }
 	],
 	controllers: [
 		ProviderDemoController
+	],
+	exports: [
+		// 导出自定义提供着
+		// 'FactoryService'
+		// 完整的导入
+		{ provide: 'FactoryService', useFactory: factoryService, inject: [OptProvider] },
 	]
 })
 export class ProviderDemoModule {

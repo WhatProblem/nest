@@ -11,6 +11,7 @@ export class ProviderDemoController {
 		@Inject('ClassService') private classService,
 		@Inject('FactoryService') private factoryService,
 		@Inject('UseExisting') private useExisting,
+		@Inject('UnService') private unService,
 	) {}
 	
 	@Get()
@@ -46,5 +47,11 @@ export class ProviderDemoController {
 	@Get('useExisting')
 	getUseExisting() {
 		return this.useExisting.getUseExist()
+	}
+
+	/* 非服务提供者 */
+	@Get('unService')
+	getUnService() {
+		return this.unService
 	}
 }
