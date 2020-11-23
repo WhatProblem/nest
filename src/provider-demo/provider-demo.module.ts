@@ -5,6 +5,7 @@ import { ClassService } from "./class.service";
 import { factoryService, OptProvider } from "./factory.service";
 import { UseExistingService } from "./useExisting.service";
 import { UnService } from "./unservice.service";
+import { asyncService } from "./async.service";
 
 /* 值提供者 */
 const MockService = {
@@ -30,7 +31,9 @@ const MockService = {
 		UseExistingService,
 		{ provide: 'UseExisting', useExisting: UseExistingService },
 		// 非服务提供者
-		{ provide: 'UnService', useFactory: UnService }
+		{ provide: 'UnService', useFactory: UnService },
+		// 异步提供者
+		{ provide: 'AsyncService', useFactory: asyncService }
 	],
 	controllers: [
 		ProviderDemoController

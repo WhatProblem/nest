@@ -12,6 +12,7 @@ export class ProviderDemoController {
 		@Inject('FactoryService') private factoryService,
 		@Inject('UseExisting') private useExisting,
 		@Inject('UnService') private unService,
+		@Inject('AsyncService') private asyncService,
 	) {}
 	
 	@Get()
@@ -53,5 +54,11 @@ export class ProviderDemoController {
 	@Get('unService')
 	getUnService() {
 		return this.unService
+	}
+
+	/* 异步提供者 */
+	@Get('async')
+	getAsync() {
+		return { msg: 'success', data: this.asyncService, code: 200 }
 	}
 }

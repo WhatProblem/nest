@@ -1,11 +1,18 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { MiddleDemoModule } from './middle-demo/middle-demo.module';
 import { ProviderDemoModule } from './provider-demo/provider-demo.module';
 import { ProviderExportModule } from './provider-demo/provider.export.module';
 
 @Module({
-  imports: [ProviderDemoModule,ProviderExportModule],
+  imports: [
+    // 提供者 provider
+    ProviderDemoModule,
+    ProviderExportModule,
+    // 中间件 middle
+    MiddleDemoModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
