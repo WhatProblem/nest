@@ -5,6 +5,7 @@ import { ExceptionDemoModule } from './exception-demo/exception-demo.module';
 import { MiddleDemoModule } from './middle-demo/middle-demo.module';
 import { ProviderDemoModule } from './provider-demo/provider-demo.module';
 import { ProviderExportModule } from './provider-demo/provider.export.module';
+import { PipeDemoModule } from './pipe-demo/pipe-demo.module';
 
 @Module({
   imports: [
@@ -15,6 +16,8 @@ import { ProviderExportModule } from './provider-demo/provider.export.module';
     MiddleDemoModule,
     // 异常过滤器
     ExceptionDemoModule,
+    // 管道
+    PipeDemoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
