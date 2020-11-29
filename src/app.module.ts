@@ -6,6 +6,7 @@ import { MiddleDemoModule } from './middle-demo/middle-demo.module';
 import { ProviderDemoModule } from './provider-demo/provider-demo.module';
 import { ProviderExportModule } from './provider-demo/provider.export.module';
 import { PipeDemoModule } from './pipe-demo/pipe-demo.module';
+import { GuardDemoModule } from './guard-demo/guard-demo.module';
 
 @Module({
   imports: [
@@ -18,6 +19,8 @@ import { PipeDemoModule } from './pipe-demo/pipe-demo.module';
     ExceptionDemoModule,
     // 管道
     PipeDemoModule,
+    // 守卫
+    GuardDemoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
