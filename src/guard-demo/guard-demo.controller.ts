@@ -22,7 +22,7 @@ export class GuardDemoController {
 	@Post('reflect')
 
 	// @SetMetadata('roles', ['admin'])
-	// @UseGuards(RolesReflectGuard)
+	@UseGuards(RolesReflectGuard)
 
 	@Roles('admin')
 	async create(@Body() createDto: CreateDto) {
