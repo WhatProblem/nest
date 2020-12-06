@@ -8,6 +8,7 @@ import { ProviderExportModule } from './provider-demo/provider.export.module';
 import { PipeDemoModule } from './pipe-demo/pipe-demo.module';
 import { GuardDemoModule } from './guard-demo/guard-demo.module';
 import { InterceptorDemoModule } from './interceptor-demo/interceptor-demo.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -24,6 +25,8 @@ import { InterceptorDemoModule } from './interceptor-demo/interceptor-demo.modul
     GuardDemoModule,
     // 拦截器
     InterceptorDemoModule,
+    // 鉴权认证
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
