@@ -4,8 +4,9 @@ import { Strategy } from "passport-local";
 import { AuthService } from "./auth.service";
 
 /**
- * @Note 本地策略
+ * @Note 本地策略 passport-local
  * 根据用户输入用户名密码验证用户是否存在
+ * 配置验证账号登录 发放token
  */
 
 @Injectable()

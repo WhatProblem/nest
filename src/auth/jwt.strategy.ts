@@ -1,10 +1,12 @@
 import { Injectable } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
-import { Strategy } from "passport-local";
+import { Strategy } from "passport-jwt";
 import { ExtractJwt } from "passport-jwt";
 import { jwtConstants } from "./constants";
 
-
+/**
+ * @Note 解析token 验证身份正确性
+ */
 
 @Injectable()
 /* 自定义策略名称 */
