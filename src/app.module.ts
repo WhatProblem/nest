@@ -9,6 +9,7 @@ import { PipeDemoModule } from './pipe-demo/pipe-demo.module';
 import { GuardDemoModule } from './guard-demo/guard-demo.module';
 import { InterceptorDemoModule } from './interceptor-demo/interceptor-demo.module';
 import { AuthModule } from './auth/auth.module';
+import { SqlModule } from './sql-demo/sql.module';
 
 @Module({
   imports: [
@@ -27,6 +28,8 @@ import { AuthModule } from './auth/auth.module';
     InterceptorDemoModule,
     // 鉴权认证
     AuthModule,
+    // 数据库
+    SqlModule,
   ],
   controllers: [AppController],
   providers: [AppService],
