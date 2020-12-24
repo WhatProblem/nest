@@ -10,6 +10,7 @@ import { GuardDemoModule } from './guard-demo/guard-demo.module';
 import { InterceptorDemoModule } from './interceptor-demo/interceptor-demo.module';
 import { AuthModule } from './auth/auth.module';
 import { SqlModule } from './sql-demo/sql.module';
+import { GraphqlDemoModule } from './graphql-demo/graphql-demo.module';
 
 @Module({
   imports: [
@@ -29,7 +30,9 @@ import { SqlModule } from './sql-demo/sql.module';
     // 鉴权认证
     AuthModule,
     // 数据库
-    SqlModule,
+    // SqlModule,
+    // graphql 应用
+    GraphqlDemoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
