@@ -6,10 +6,11 @@ import { CatsModule } from "./cats/cats.module";
 @Module({
 	imports: [
 		CatsModule,
-		GraphQLModule.forRoot(),
-		// GraphQLModule.forRoot({
-		// 	installSubscriptionHandlers: true
-		// })
+		GraphQLModule.forRoot({
+			// 定义需要转译输出的graphql文件的目录位置
+			typePaths: ['./**/*.graphql'],
+			installSubscriptionHandlers: true
+		})
 		// GraphQLModule.forRoot({
 		// 	// 定义需要转译输出的graphql文件的目录位置
 		// 	typePaths: ['./**/*.graphql'],
