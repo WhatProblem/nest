@@ -1,6 +1,7 @@
 type Query {
   getCats: [Cat]
   cat(id: ID!): Cat
+  hello: String
 }
 
 type Mutation {

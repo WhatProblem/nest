@@ -15,6 +15,8 @@ export abstract class IQuery {
     abstract getCats(): Cat[] | Promise<Cat[]>;
 
     abstract cat(id: string): Cat | Promise<Cat>;
+
+    abstract hello(): string | Promise<string>;
 }
 
 export abstract class IMutation {

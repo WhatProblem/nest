@@ -12,6 +12,11 @@ export class CatsResolvers {
   constructor(private readonly catsService: CatsService) {}
 
   @Query()
+  hello() {
+    return 'hello world'
+  }
+
+  @Query()
   async getCats() {
     return this.catsService.findAll();
   }
@@ -33,6 +38,7 @@ export class CatsResolvers {
 
   @Subscription('catCreated')
   catCreated() {
+    console.log('************创建一次数据***********')
     return pubSub.asyncIterator('catCreated');
   }
 }
