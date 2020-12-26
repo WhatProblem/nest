@@ -10,7 +10,8 @@ import { GuardDemoModule } from './guard-demo/guard-demo.module';
 import { InterceptorDemoModule } from './interceptor-demo/interceptor-demo.module';
 import { AuthModule } from './auth/auth.module';
 import { SqlModule } from './sql-demo/sql.module';
-import { GraphqlDemoModule } from './graphql-demo/graphql-demo.module';
+import { GraphqlSchemaDemoModule } from './graphql-schema-demo/graphql-schema-demo.module';
+import { GraphqlCodeDemoModule } from './graphql-code-demo/graphql-code-demo.module';
 
 @Module({
   imports: [
@@ -31,8 +32,10 @@ import { GraphqlDemoModule } from './graphql-demo/graphql-demo.module';
     AuthModule,
     // 数据库
     // SqlModule,
-    // graphql 应用
-    GraphqlDemoModule,
+    // graphql 应用 模式优先
+    GraphqlSchemaDemoModule,
+    // graphql 应用 代码优先
+    // GraphqlCodeDemoModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -24,4 +24,4 @@ import { CatsModule } from "./cats/cats.module";
 		// })
 	]
 })
-export class GraphqlDemoModule { }
+export class GraphqlSchemaDemoModule { }
