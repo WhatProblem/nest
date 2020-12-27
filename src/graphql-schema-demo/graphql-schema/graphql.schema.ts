@@ -17,6 +17,10 @@ export abstract class IQuery {
     abstract cat(id: string): Cat | Promise<Cat>;
 
     abstract hello(): string | Promise<string>;
+
+    abstract catsChild(id: number): CatsChild | Promise<CatsChild>;
+
+    abstract author(id: number): Author | Promise<Author>;
 }
 
 export abstract class IMutation {
@@ -31,4 +35,28 @@ export class Cat {
     id?: number;
     name?: string;
     age?: number;
+}
+
+export class Author {
+    id: number;
+    firstName?: string;
+    lastName?: string;
+    posts?: Post[];
+}
+
+export class Post {
+    id: number;
+    title: string;
+    votes?: number;
+}
+
+export class CatsChild {
+    id: number;
+    name: string;
+    children?: CatsChildren[];
+}
+
+export class CatsChildren {
+    id: number;
+    name: string;
 }

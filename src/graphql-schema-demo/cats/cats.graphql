@@ -2,6 +2,10 @@ type Query {
   getCats: [Cat]
   cat(id: ID!): Cat
   hello: String
+
+  catsChild(id: Int!): CatsChild
+
+  author(id: Int!): Author
 }
 
 type Mutation {
@@ -21,4 +25,28 @@ type Cat {
 input CreateCatInput {
   name: String
   age: Int
+}
+
+type Author {
+  id: Int!
+  firstName: String
+  lastName: String
+  posts: [Post]
+}
+
+type Post {
+  id: Int!
+  title: String!
+  votes: Int
+}
+
+type CatsChild {
+  id: Int!
+  name: String!
+  children: [CatsChildren]
+}
+
+type CatsChildren {
+  id: Int!
+  name: String!
 }
