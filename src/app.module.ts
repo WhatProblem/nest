@@ -33,9 +33,9 @@ import { GraphqlCodeDemoModule } from './graphql-code-demo/graphql-code-demo.mod
     // 数据库
     // SqlModule,
     // graphql 应用 模式优先
-    GraphqlSchemaDemoModule,
+    // GraphqlSchemaDemoModule,
     // graphql 应用 代码优先
-    // GraphqlCodeDemoModule
+    GraphqlCodeDemoModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -2,28 +2,33 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Recipe {
-  id: ID!
+type Post {
+  id: Int!
   title: String!
-  description: String
-  creationDate: DateTime!
-  ingredients: [String!]!
+  votes: Int
 }
 
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
+type Author {
+  id: Float!
+  firstName: String
+  lastName: String
+  posts: [Post!]!
+}
 
 type Query {
-  recipe(id: String!): Recipe!
-  recipes(skip: Int = 0, take: Int = 25): [Recipe!]!
+  authorList(pageIndex: Int!): [Author!]!
+  author(id: Float!): Author!
 }
 
 type Mutation {
-  removeRecipe(id: String!): Boolean!
+  upvotePost(upvotePostData: UpvotePostInput!): Post!
+}
+
+input UpvotePostInput {
+  id: Float!
+  votes: Float!
 }
 
 type Subscription {
-  recipeAdded: Recipe!
+  postupdated: Post!
 }
