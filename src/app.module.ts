@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { SqlModule } from './sql-demo/sql.module';
 import { GraphqlSchemaDemoModule } from './graphql-schema-demo/graphql-schema-demo.module';
 import { GraphqlCodeDemoModule } from './graphql-code-demo/graphql-code-demo.module';
+import { SerializerDemoModule } from './serializer-demo/serializer-demo.module';
 
 @Module({
   imports: [
@@ -31,11 +32,13 @@ import { GraphqlCodeDemoModule } from './graphql-code-demo/graphql-code-demo.mod
     // 鉴权认证
     AuthModule,
     // 数据库
-    // SqlModule,
+    SqlModule,
     // graphql 应用 模式优先
     // GraphqlSchemaDemoModule,
     // graphql 应用 代码优先
-    GraphqlCodeDemoModule
+    // GraphqlCodeDemoModule,
+    // serializer 序列化返回数据，脱敏关键字段
+    SerializerDemoModule
   ],
   controllers: [AppController],
   providers: [AppService],

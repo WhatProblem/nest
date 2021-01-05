@@ -3,6 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Product } from "./entity/product";
 import { Repository } from "typeorm";
 import { ProductCreateDto } from "./product-create.dto";
+import { ProductUpdateDto } from "./product-update.dto";
 
 export interface ResList{
 	data: Product[]
@@ -25,12 +26,12 @@ export class ProductService {
 	create(productCreateDto: ProductCreateDto, type='create'): Promise<Product> {
 		const productEntity = new Product()
 		if (type === 'create') {
-			productEntity.created_time = new Date()
+			productEntity.createdTime = new Date()
 		}
 		productEntity.uuid = `uuid-${new Date().getTime()}`
-		productEntity.product_code = `${new Date().getTime()}`
-		productEntity.product_name = productCreateDto.product_name
-		productEntity.product_price = productCreateDto.product_price
+		productEntity.productCode = `${new Date().getTime()}`
+		productEntity.productName = productCreateDto.productName
+		productEntity.productPrice = productCreateDto.productPrice
 		return this.productReposity.save(productEntity)
 	}
 
@@ -55,7 +56,7 @@ export class ProductService {
 	}
 
 	/* 修改数据 */
-	async update(productUpdateDto: ProductCreateDto):Promise<void> {
+	async update(productUpdateDto: ProductUpdateDto):Promise<void> {
 		const id = productUpdateDto.id
 		delete productUpdateDto.id
 		await this.productReposity.update(id, productUpdateDto)
